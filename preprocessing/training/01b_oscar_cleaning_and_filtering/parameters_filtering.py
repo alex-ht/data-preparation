@@ -492,6 +492,43 @@ parameters_filtering_zh = {
     "perplexity_max_cutoff": 2095,
 }
 
+parameters_filtering_ja = {
+    "cond_uniform_whitespace": True,
+    "cond_replace_unicode_punctuation": False,
+    "cond_remove_words_with_incorrect_substrings": False,
+    "incorrect_word_substrings": ["http", "www", ".com", "href", "//"],
+    "cond_remove_long_words": False,
+    "length_word_max_cutoff": 1000,
+    "cond_check_number_words": True,
+    "tokenization": True,
+    "strip_characters": special_characters_default,
+    "number_words_min_cutoff": 1,
+    "number_words_max_cutoff": 1000000,
+    "cond_check_character_repetition_removal": True,
+    "character_repetition_length": 3,
+    "character_repetition_max_cutoff": 0.2,
+    "cond_check_word_repetition_removal": True,
+    "word_repetition_length": 5,
+    "word_repetition_max_cutoff": 0.96,
+    "cond_check_special_characters": True,
+    "special_characters": special_characters_default,
+    "special_characters_max_cutoff": 0.3,
+    "cond_words_augmentation": True,
+    "words_augmentation_group_sizes": [2],
+    "words_augmentation_join_char": "",
+    "cond_check_stopwords": True,
+    "stopwords_min_cutoff": 0.1691,
+    "cond_check_flagged_words": True,
+    "flagged_words_max_cutoff": 0.001,
+    "cond_check_lang_id": True,
+    "lang_id_min_cutoff": 0.85,
+    "cond_check_perplexity": True,
+    "perplexity_max_cutoff": 2095,
+}
+''' TODO(Alex)
+check perplexity_max_cutoff
+'''
+
 parameters_filtering = {
     "default": parameters_filtering_default,
     "ar": parameters_filtering_ar,
@@ -507,4 +544,5 @@ parameters_filtering = {
     "ur": parameters_filtering_ur,
     "vi": parameters_filtering_vi,
     "zh": parameters_filtering_zh,
+    "ja": parameters_filtering_ja,
 }
