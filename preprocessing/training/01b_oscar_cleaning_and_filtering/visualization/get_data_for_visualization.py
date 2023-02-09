@@ -1,4 +1,4 @@
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk
 from tqdm import tqdm
 import json
 
@@ -167,27 +167,20 @@ class GetDataForVisualization:
 
 if __name__ == "__main__":
 
-    lang_dataset_id = "en"
+    lang_dataset_id = "ru"
 
-    dataset_name = "oscar"  # "TurkuNLP/register_oscar"
-    config_name = f"unshuffled_deduplicated_{lang_dataset_id}"  # None
-    data_files = None  # f"{lang_dataset_id}/{lang_dataset_id}_00000.jsonl.gz"
-    split = "train"
+    dataset_path = f"/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/olm-CC-MAIN-2022-49-40-33-sampling-ratio-olm-0.1/cc_raw/{lang_dataset_id}"
     num_iter = 15000
 
     lang_dataset_id = lang_dataset_id
-    path_fasttext_model = "ac_dc/lid.176.bin"
-    path_sentencepiece_model = f"ac_dc/{lang_dataset_id}.sp.model"
-    path_kenlm_model = f"ac_dc/{lang_dataset_id}.arpa.bin"
+    path_fasttext_model = "/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/lid.176.bin"
+    path_sentencepiece_model = f"/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/{lang_dataset_id}.sp.model"
+    path_kenlm_model = f"/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/{lang_dataset_id}.arpa.bin"
     path_save_stats = f"ac_dc/visualization/{lang_dataset_id}_examples_with_stats.json"
 
-    dataset = load_dataset(
-        dataset_name,
-        config_name,
-        data_files=data_files,
-        split=split,
-        streaming=True,
-    ).shuffle(buffer_size=num_iter, seed=42)
+    dataset = load_from_disk(
+        dataset_path,
+    ).shuffle(seed=42)
 
     get_data_for_visualization = GetDataForVisualization(
         dataset,

@@ -913,11 +913,11 @@ param_visu_langs = {
         "num_docs_for_words": 1500,
         "max_len_text_display": 10000,
         "lang_dataset_id": lang_dataset_id,
-        "path_fasttext_model": "./ac_dc/lid.176.bin",
-        "path_sentencepiece_model": f"./ac_dc/{lang_dataset_id}.sp.model",
-        "path_kenlm_model": f"./ac_dc/{lang_dataset_id}.arpa.bin",
+        "path_fasttext_model": "/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/lid.176.bin",
+        "path_sentencepiece_model": f"/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/{lang_dataset_id}.sp.model",
+        "path_kenlm_model": f"/home/ubuntu/disk/olm-datasets/pipeline_scripts/common_crawl/sp_kenlm_ft_models/{lang_dataset_id}.arpa.bin",
     }
-    for lang_dataset_id in ["en", "zh"]
+    for lang_dataset_id in ["de", "ru"]
 }
 
 visualization = Visualization(path_instructions, param_visu_langs)

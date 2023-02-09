@@ -128,5 +128,23 @@ langs_id = [
         "sentencepiece_id": "ja",
         "kenlm_id": "ja",
     },
+    {
+        "lang": "Dutch",
+        "dataset_id": "de",
+        "stopwords_id": "de",
+        "flagged_words_id": "de",
+        "fasttext_id": "de",
+        "sentencepiece_id": "de",
+        "kenlm_id": "de",
+    },
+    {
+        "lang": "Russian",
+        "dataset_id": "ru",
+        "stopwords_id": "ru",
+        "flagged_words_id": "ru",
+        "fasttext_id": "ru",
+        "sentencepiece_id": "ru",
+        "kenlm_id": "ru",
+    },
 ]
 langs_id = pd.DataFrame(langs_id)
