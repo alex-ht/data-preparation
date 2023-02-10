@@ -462,7 +462,7 @@ parameters_filtering_zh = {
     "cond_uniform_whitespace": True,
     "cond_replace_unicode_punctuation": False,
     "cond_remove_words_with_incorrect_substrings": True,
-    "incorrect_word_substrings": ["http", "www", ".com", "href", "//", "\\"],
+    "incorrect_word_substrings": ["http", "www", ".com", "href", "//", "\\", '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\x08', '\x09', '\n'],
     "cond_remove_long_words": False,
     "length_word_max_cutoff": 1000,
     "cond_check_number_words": True,
